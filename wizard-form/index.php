@@ -90,10 +90,11 @@
 
         // Fungsi untuk mengupdate file JSON
         function updateJSONFile(jsonFile, data) {
+            var selectedJson = $('#json-select').val();
             $.ajax({
                 type: 'POST',
                 url: 'update_json.php',
-                data: { json: JSON.stringify(data) },
+                data: { json: JSON.stringify(data) , thisFile:selectedJson },
                 success: function(response) {
                     renderTable(data);  // Menampilkan tabel dengan data JSON yang diperbarui
                     clearForm();  // Mengosongkan formulir
@@ -199,10 +200,11 @@
 
         // Fungsi untuk mengupdate file JSON
         function updateJSONFile(jsonFile, data) {
+            var selectedJson = $('#json-select').val();
             $.ajax({
                 type: 'POST',
                 url: 'update_json.php',
-                data: { json: JSON.stringify(data) },
+                data: { json: JSON.stringify(data) , thisFile:selectedJson},
                 success: function(response) {
                     renderTable(data);  // Menampilkan tabel dengan data JSON yang diperbarui
                     clearForm();  // Mengosongkan formulir
